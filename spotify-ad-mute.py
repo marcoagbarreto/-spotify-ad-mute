@@ -24,9 +24,17 @@ def resource_path(relative_path):
     return os.path.join(base_path, relative_path)
 
 
-image_volume = resource_path('img/volume.png')
-image_mute = resource_path('img/mute.png')
-image_ad = [resource_path('img/en.png'), resource_path('img/es.png')]
+def append_ads(folder_ad='ads'):
+    ads = []
+    for image in os.listdir(folder_ad):
+        if image.endswith(".png") or image.endswith(".jpg") or image.endswith(".jpeg"):
+            ads.append(folder_ad + '/' + image)
+    return ads
+
+
+image_volume = resource_path('volume/volume.png')
+image_mute = resource_path('volume/mute.png')
+image_ad = append_ads(resource_path('ads'))
 
 
 class MuteAd(threading_Thread):
@@ -56,8 +64,8 @@ def locate_image(image):
 
 
 def check_for_ad(ads):
-    for image in ads:
-        xy_ad = locate_image(image)
+    for ad in ads:
+        xy_ad = locate_image(ad)
         if xy_ad is not None:
             return xy_ad
 
