@@ -79,19 +79,23 @@ def show_menu(mute_ad):
         mute_ad.running = True
     else:
         mute_ad.running = False
+        mute_ad.program_running = False
+        return True
 
 
 def main():
     # Set terminal size to optimal size
     os.system('mode con cols=30 lines=7')
 
-    # Start program
-    mute_ad = MuteAd()
-    mute_ad.start()
-
     while True:
-        # show menu
-        show_menu(mute_ad)
+        # Start program
+        mute_ad = MuteAd()
+        mute_ad.start()
+
+        while True:
+            # show menu
+            if show_menu(mute_ad):
+                break
 
 
 if __name__ == "__main__":
