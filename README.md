@@ -1,7 +1,7 @@
 # spotify-ad-mute
 This is a program to mute spotify whenever an ad appears.
 
-* Download the latest release of [spotify-ad-mute.exe](https://github.com/marcoagbarreto/spotify-ad-mute/releases/download/v0.1.1/spotify-ad-mute.exe)
+* Download the latest release of [spotify-ad-mute.exe](https://github.com/marcoagbarreto/spotify-ad-mute/releases/download/v0.1.2/spotify-ad-mute.exe)
 
 ## Example
 
